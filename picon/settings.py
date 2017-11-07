@@ -25,7 +25,7 @@ SECRET_KEY = '2+&f3=s8d!r^tjr88!gu)j!e$s+20)%xmv1xib+eco!9xjt9+s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mighty-coast-32545.herokuapp.com']
 
 
 # Application definition
