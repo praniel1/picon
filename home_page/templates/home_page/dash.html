@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+
+</head>
+<body>
+{% for per in all_person %}
+        <h3>First Name:&nbsp {{ per.first_name }}<br>Last Name:&nbsp {{ per.last_name }}<br>Email:&nbsp {{per.email}}<br>Username:&nbsp {{per.username}}</h3>
+        <br>
+{% endfor %}
+</body>
+</html>

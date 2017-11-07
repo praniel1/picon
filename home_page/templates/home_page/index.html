@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Piconet</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'home_page/style.css' %}"/>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="p">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Piconet</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><button class="btn btn-link btn-lg">Blog</button></li>
+        <li><button class="btn btn-link btn-lg">Help</button></li>
+        <li><button type="button" class="btn btn-lg log_btn" onclick="show()">Log in</button></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="header-bg">
+  <div class="trans">
+    
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+  		  <button class="btn btn-lg reg_btn_mail" onclick="show2()">Join with Mail</button>
+      </div>
+      <div class="col-md-4">
+    	   <button class="btn btn-lg reg_btn_fb">Join with Facebook</button>
+      </div>
+      <div class="col-md-2"></div>
+    
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <form action="/login" class="modal-content" method="post">
+    {% csrf_token %}
+    <span onclick="dont_show()" class="close" title="Close Modal">&times;</span>
+    <div class="container" style="width:auto;">
+      <label>User name:</label><br>
+      <input class="minput" type="text" name="username" placeholder="Enter your username" required><br>
+      <label>Password:</label><br>
+      <input class="minput" type="Password" name="password" placeholder="Enter Password" required><br>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 center-log">
+          <button stype="submit" class="btn button_login">Login</button>
+        </div>
+        <div class="col-md-2"></div>
+      </div><br>
+    </div>
+  </form>
+</div>
+
+<div id="myModal2" class="modal">
+  <form action="/register" role="form" method="post" class="modal-content2">
+      {% csrf_token %}
+    <span onclick="dont_show2()" class="close" title="Close Modal">&times;</span><br><br>
+    <div class="container" style="width:auto;">
+
+      <div class="row">
+        <div class="col-md-6">
+          <input class="minput" type="text" name="first_name" placeholder="First name" required>
+        </div>
+        <div class="col-md-6">
+          <input class="minput" type="text" name="last_name" placeholder="Last name" required>
+        </div>
+      </div>
+      <input type="text" class="minput" name="username" placeholder="username">
+      <input type="email" class="minput" name="mail" placeholder="email">
+      <input class="minput" type="Password" name="pass" placeholder="password" required><br>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 center-log">
+          <button type="submit" class="btn button_login ">Register</button>
+        </div>
+        <div class="col-md-2"></div>
+      </div><br>
+    </div>
+  </form>
+</div>
+
+<script type="text/javascript" src="{% static 'home_page/javascript.js' %} "></script>
+</body>
+</html>
